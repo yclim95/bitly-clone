@@ -7,12 +7,12 @@ post '/urls' do
   @urls =  Url.all
   url = Url.new(long_url_text: params[:long_url])
   url.shorten 
-  erb :"static/index"
+  erb :"static/success"
 end
 
-# get '/success' do
-#   erb :"static/success"
-# end
+ # get '/success' do
+
+ # end
 
 # get './name ' do
 

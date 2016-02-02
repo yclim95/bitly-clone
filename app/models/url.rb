@@ -1,5 +1,5 @@
 class Url < ActiveRecord::Base
-
+  before_create :random_url
 	# This is Sinatra! Remember to create a migration!
   def shorten 
     self.short_url_text = random_url

@@ -1,9 +1,20 @@
-Successfully submitted 
-<!--
-<% @urls.each #do |url| %>
-  <ul>
-    <li>Long url: <%=url.long_url_text%></li>
-    <li>Short url:<a href=<%= #"#{url.short_url_text}" %>> <%=url.short_url_text %></a></li>
-  </ul>
-<% #end %>
--->
+<h1 style="font size:24px"> Successfully Submitted! <h1>
+
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Long URL</th>
+    <th>Short URL</th>
+  </tr>
+
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%=url.id%></td>
+      <td><%=url.long_url_text%></td>  <!-- Long URL -->
+      <td><a href=<%= "#{url.short_url_text}" %>> <%=url.short_url_text %></a></td>  <!-- Short URL -->
+    </tr>
+  <% end %>
+</table>
+
+<p><a href="/">HOME</a></p>
