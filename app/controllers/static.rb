@@ -1,23 +1,22 @@
-get '/index' do
+get '/' do
   @urls =  Url.all
   erb :"static/index"
 end
 
-post '/urls' do
+post '/urls' do 
+  @urls =  Url.all
   url = Url.new(long_url_text: params[:long_url])
   url.shorten 
-  if(url.save)
-   redirect "/"
-  end
+  erb :"static/index"
 end
 
-get '/success' do
-  erb :"static/success"
-end
+# get '/success' do
+#   erb :"static/success"
+# end
 
-get './name ' do
+# get './name ' do
 
-end	
+# end	
 
 get '/:short_url' do 
   @url = Url.find_by(short_url_text: params[:short_url])

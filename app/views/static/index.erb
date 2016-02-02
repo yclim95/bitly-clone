@@ -1,11 +1,13 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<h1>Simple url shortener</h1>
 
-<form action ="/urls" method = "post">
+<form action ="/urls" method = "POST" >
   Enter Url: 
-  <input type = "text" name = "long_url">
-  <input type = "submit" name = "Submit">
+  <input type = "text" name = "long_url" >
+  <input type = "submit" name = "Submit" >
 </form>
+
+
+
 
 <% @urls.each do |url| %>
   <ul>
