@@ -6,13 +6,15 @@
     <th>No</th>
     <th>Long URL</th>
     <th>Short URL</th>
+    <th>Counter</th>
   </tr>
 
   <% @urls.each do |url| %>
     <tr>
       <td><%=url.id%></td>
       <td><%=url.long_url_text%></td>  <!-- Long URL -->
-      <td><a href=<%= "#{url.short_url_text}" %>> <%=url.short_url_text %></a></td>  <!-- Short URL -->
+      <td><a target="_blank" href=<%= "#{url.short_url_text}" %>> <%=url.short_url_text %> </a></td>  <!-- Short URL -->
+      <td><%=url.click_count%></td>  <!-- Counter -->
     </tr>
   <% end %>
 </table>
