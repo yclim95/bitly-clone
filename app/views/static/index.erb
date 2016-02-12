@@ -1,7 +1,29 @@
+<% if @error.nil? == false %>
+<script>alert(<%= @error %>)</script>
+<% end %>
 <h1>Simple url shortener</h1>
-<h3><%= @error %></h3>
-<form action ="/urls" method = "POST" >
-  Enter Url: 
-  <input type = "text" name = "long_url" >
-  <input type = "submit" name = "Submit" >
+
+<form id="url_form" action ="/create" method = "POST" >
+Enter Url: 
+<a title="Please enter the url that you would like to shorten!"><input type = "text" name = "long_url" taborder="1" placeholder="Please Enter the URL here" id="long_url_input"></a>
+<input type = "submit" name = "Submit" id="submit">
 </form>
+<div id="short_url"></div>
+
+<table id="display_table">
+  <tr>
+    <th>No</th>
+    <th>Long URL</th>
+    <th>Short URL</th>
+    <th>Counter</th>
+  </tr> 
+
+  <% @urls.each do |url| %>
+    <tr>
+      <td><%=url.id%></td>
+      <td><%=url.long_url_text%></td>  <!-- Long URL -->
+      <td><a target="_blank" href=<%= "#{url.short_url_text}" %>> <%=url.short_url_text %> </a></td>  <!-- Short URL -->
+      <td><%=url.click_count%></td>  <!-- Counter -->
+    </tr>
+  <% end %>
+</table>

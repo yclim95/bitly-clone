@@ -15,6 +15,9 @@ gem 'activerecord'
 gem 'activesupport'
 gem 'sinatra-activerecord'
 
+
+gem 'sinatra-flash'
+gem "sinatra-param"
 # Adding Database elements
 gem 'pg'
 

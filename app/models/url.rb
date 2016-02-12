@@ -1,6 +1,7 @@
 class Url < ActiveRecord::Base
   before_create :random_url 
-  validates :long_url_text, format: {with: /(http:\/\/|https:\/\/)(www.)([a-z]*.)(com|edu|org|net|gov|mil|biz|info|co.uk)/, messages: "Invalid URL address"}
+  validates_presence_of :long_url_text, message: "can't be blank!"
+  validates :long_url_text, format: {with: /(http:\/\/|https:\/\/)(www.)([a-z]*.)(com|edu|org|net|gov|mil|biz|info|co.uk)/, message: "inputed is invalid!"}
 	# This is Sinatra! Remember to create a migration!
   def shorten 
     self.short_url_text = random_url

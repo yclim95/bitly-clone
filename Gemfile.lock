@@ -67,6 +67,10 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
+    sinatra-param (1.4.0)
+      sinatra (~> 1.3)
     thin (1.6.3)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0)
@@ -91,4 +95,9 @@ DEPENDENCIES
   sinatra
   sinatra-activerecord
   sinatra-contrib
+  sinatra-flash
+  sinatra-param
   thin
+
+BUNDLED WITH
+   1.11.2
